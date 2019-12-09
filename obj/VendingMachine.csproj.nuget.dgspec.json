@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Patryk\\source\\repos\\VendingMachine\\VendingMachine.csproj": {}
+    "C:\\Users\\Patryk\\Source\\Repos\\Vending-MachinePR\\VendingMachine.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Patryk\\source\\repos\\VendingMachine\\VendingMachine.csproj": {
+    "C:\\Users\\Patryk\\Source\\Repos\\Vending-MachinePR\\VendingMachine.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Patryk\\source\\repos\\VendingMachine\\VendingMachine.csproj",
+        "projectUniqueName": "C:\\Users\\Patryk\\Source\\Repos\\Vending-MachinePR\\VendingMachine.csproj",
         "projectName": "VendingMachine",
-        "projectPath": "C:\\Users\\Patryk\\source\\repos\\VendingMachine\\VendingMachine.csproj",
+        "projectPath": "C:\\Users\\Patryk\\Source\\Repos\\Vending-MachinePR\\VendingMachine.csproj",
         "packagesPath": "C:\\Users\\Patryk\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Patryk\\source\\repos\\VendingMachine\\obj\\",
+        "outputPath": "C:\\Users\\Patryk\\Source\\Repos\\Vending-MachinePR\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

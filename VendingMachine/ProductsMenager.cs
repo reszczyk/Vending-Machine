@@ -24,7 +24,7 @@ namespace VendingMachine.VendingMachine
 
         public void ReduceProduct(int key)
         {
-            if (key.Equals(this.products.) > 0)
+           /* if (key.Equals(this.products.) > 0)
             {
                 product.Amount -= product.Amount;
             }
@@ -32,6 +32,7 @@ namespace VendingMachine.VendingMachine
             {
 
             }
+            */
         }
 
         public int KeyGenerator()

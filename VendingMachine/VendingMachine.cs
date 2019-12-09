@@ -47,7 +47,7 @@ namespace VendingMachine.VendingMachine
                     {
                         Console.WriteLine($"Kupiono {Machine.Value.Name}");
                         cash.DecreaseMoney(Machine.Value.Price);
-                        Machine.ReduceProducy(choise);
+                       // Machine.ReduceProducy(choise);
                     }
                 }
             }
