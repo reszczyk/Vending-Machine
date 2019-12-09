@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace VendingMachine.VendingMachine
 {
@@ -52,7 +50,7 @@ namespace VendingMachine.VendingMachine
                         Pause();
                         break;
 
-                    case "0":
+                    case "0": //Koniec
                         Console.Clear();
                         Console.WriteLine("Koniec programu :)");
                         loop = false;
