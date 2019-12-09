@@ -23,7 +23,7 @@ namespace VendingMachine.VendingMachine
 
         public void ReturnMoney()
         {
-            Console.WriteLine("Wydano:");
+            Console.WriteLine("Automat zwrócił:");
             this.Money = ReturnCoin(500, this.Money, "5zł");
             this.Money = ReturnCoin(200, this.Money, "2zł");
             this.Money = ReturnCoin(100, this.Money, "1zł");
