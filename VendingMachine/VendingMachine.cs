@@ -24,7 +24,10 @@ namespace VendingMachine.VendingMachine
                 {
                     Console.WriteLine($"{Machine.Key}{"".PadRight(6)}{Machine.Value.Name}{"\t".PadLeft(7)}{Machine.Value.Price}{" zł".PadRight(6)}BRAK");
                 }
-                Console.WriteLine($"{Machine.Key}{"".PadRight(6)}{Machine.Value.Name}{"\t".PadLeft(7)}{Machine.Value.Price}{" zł".PadRight(6)}{Machine.Value.Amount}");
+                else if (Machine.Value.Amount > 0) 
+                { 
+                    Console.WriteLine($"{Machine.Key}{"".PadRight(6)}{Machine.Value.Name}{"\t".PadLeft(7)}{Machine.Value.Price}{" zł".PadRight(6)}{Machine.Value.Amount}"); 
+                }
             }
         }
 
@@ -32,21 +35,24 @@ namespace VendingMachine.VendingMachine
         {
             int choise = System.Convert.ToInt32(Console.ReadLine());
 
-            foreach (KeyValuePair<int, Product> Machine in this.Machine)
+            foreach (KeyValuePair<int, Product> machine in this.Machine)
             {
                 if (choise == 0) { break; }
-                if (!this.Machine.ContainsKey(choise))
+                else if (machine.Key.Equals(choise) == true)
                 {
-                    break;
-                }
-                else if (this.Machine.ContainsKey(choise) == true)
-                {
-                    if (Machine.Value.Amount == 0) { Console.WriteLine("BRAK PRODUKTU!"); }
+                    if (machine.Value.Amount == 0) { Console.WriteLine("BRAK PRODUKTU!"); }
                     else
                     {
-                        Console.WriteLine($"Kupiono {Machine.Value.Name}");
-                        cash.DecreaseMoney(Machine.Value.Price);
-                        // Machine.ReduceProducy(choise);
+                        if(cash.DecreaseMoney(machine.Value.Price) == true)
+                        {
+                            Console.WriteLine($"Kupiono {machine.Value.Name}");
+                            cash.DecreaseMoney(machine.Value.Price);
+                            this.Machine[choise].ReduceAmount();
+                        }
+                        else
+                        {
+                            Console.WriteLine("Masz za mało pieniędzy!");
+                        }
                     }
                 }
             }

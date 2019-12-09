@@ -15,7 +15,7 @@ namespace VendingMachine.VendingMachine
 
         public bool DecreaseMoney(decimal money)
         {
-            if((this.Money -= money) < 0) { return false; }
+            if((this.Money - money) < 0) { return false; }
             else
             {
                 this.Money -= money;
