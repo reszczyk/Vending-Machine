@@ -22,19 +22,6 @@ namespace VendingMachine.VendingMachine
             return products;
         }
 
-        public void ReduceProduct(int key)
-        {
-           /* if (key.Equals(this.products.) > 0)
-            {
-                product.Amount -= product.Amount;
-            }
-            else
-            {
-
-            }
-            */
-        }
-
         public int KeyGenerator()
         {
             if(index == 10) 

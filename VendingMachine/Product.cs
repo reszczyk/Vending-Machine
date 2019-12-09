@@ -10,14 +10,12 @@ namespace VendingMachine.VendingMachine
         public decimal Price { get; set; }
         public int Amount { get; set; }
 
-        public bool ReduceProduct()
+        public void ReduceAmount()
         {
             if (this.Amount > 0)
             {
                 this.Amount--;
-                return true;
             }
-            return false;
         }
     }
 }

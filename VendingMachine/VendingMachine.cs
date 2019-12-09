@@ -8,7 +8,6 @@ namespace VendingMachine.VendingMachine
     {
         public Dictionary<int, Product> Machine = new Dictionary<int, Product>();
         ProductsMenager MenageProducts = new ProductsMenager();
-
         public Cash cash = new Cash();
 
         public void FillMachine()
@@ -31,23 +30,23 @@ namespace VendingMachine.VendingMachine
 
         public void SellProduct()
         {
-            string choise = Console.ReadLine();
+            int choise = System.Convert.ToInt32(Console.ReadLine());
+
             foreach (KeyValuePair<int, Product> Machine in this.Machine)
             {
-                if (choise == "0") { }
-                else if (choise != Machine.Key.ToString())
+                if (choise == 0) { break; }
+                if (!this.Machine.ContainsKey(choise))
                 {
-                    Console.Clear();
-                    Console.WriteLine("Nie ma takiego produktu");
+                    break;
                 }
-                else if (choise == Machine.Key.ToString())
+                else if (this.Machine.ContainsKey(choise) == true)
                 {
                     if (Machine.Value.Amount == 0) { Console.WriteLine("BRAK PRODUKTU!"); }
                     else
                     {
                         Console.WriteLine($"Kupiono {Machine.Value.Name}");
                         cash.DecreaseMoney(Machine.Value.Price);
-                       // Machine.ReduceProducy(choise);
+                        // Machine.ReduceProducy(choise);
                     }
                 }
             }

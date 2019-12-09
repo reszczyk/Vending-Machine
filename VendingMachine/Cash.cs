@@ -13,9 +13,14 @@ namespace VendingMachine.VendingMachine
             this.Money += money;
         }
 
-        public void DecreaseMoney(decimal money)
+        public bool DecreaseMoney(decimal money)
         {
-            this.Money -= money;
+            if((this.Money -= money) < 0) { return false; }
+            else
+            {
+                this.Money -= money;
+                return true;
+            }
         }
 
         public void ReturnMoney()
