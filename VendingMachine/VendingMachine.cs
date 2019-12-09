@@ -7,7 +7,7 @@ namespace VendingMachine.VendingMachine
     class VendingMachine
     {
         public Dictionary<int, Product> Machine = new Dictionary<int, Product>();
-        ProductsMenager MenageProducts = new ProductsMenager();
+        ProductsManager MenageProducts = new ProductsManager();
         public Cash cash = new Cash();
 
         public void FillMachine()

@@ -15,7 +15,7 @@ namespace VendingMachine.VendingMachine
 
         public bool DecreaseMoney(decimal money)
         {
-            if((this.Money - money) < 0) { return false; }
+            if ((this.Money - money) < 0) { return false; }
             else
             {
                 this.Money -= money;
@@ -26,25 +26,19 @@ namespace VendingMachine.VendingMachine
         public void ReturnMoney()
         {
             Console.WriteLine("Wydano:");
-            this.Money = ReturnZl(5, this.Money, "5");
-            this.Money = ReturnZl(2, this.Money, "2");
-            this.Money = ReturnZl(1, this.Money, "1");
-            this.Money = ReturnGr(50, this.Money, "50");
-            this.Money = ReturnGr(20, this.Money, "20");
-            this.Money = ReturnGr(10, this.Money, "10");
+            this.Money = ReturnCoin(500, this.Money, "5zł");
+            this.Money = ReturnCoin(200, this.Money, "2zł");
+            this.Money = ReturnCoin(100, this.Money, "1zł");
+            this.Money = ReturnCoin(50, this.Money, "50gr");
+            this.Money = ReturnCoin(20, this.Money, "20gr");
+            this.Money = ReturnCoin(10, this.Money, "10gr");
         }
 
-        public decimal ReturnZl(int amount, decimal money, string coin)
-        {
-            int penny = Decimal.ToInt32(money/amount);
-            if (penny != 0) { Console.WriteLine(penny + "x " + coin + "zł"); }
-            return money -= Convert.ToDecimal(amount * penny);
-        }
-        public decimal ReturnGr(int amount, decimal money, string coin)
+        public decimal ReturnCoin(int amount, decimal money, string coin)
         {
             money *= 100;
             int penny = Decimal.ToInt32(money / amount);
-            if (penny != 0) { Console.WriteLine(penny + "x " + coin + "gr"); }
+            if (penny != 0) { Console.WriteLine(penny + "x " + coin); }
             money -= Convert.ToDecimal(amount * penny);
             return money /= 100;
         }
