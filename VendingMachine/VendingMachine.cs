@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace VendingMachine.VendingMachine
 {
-    class VendingMachine
+    class VendingMachine : IVendingMachine
     {
         public Dictionary<int, Product> Machine = new Dictionary<int, Product>();
         ProductsManager MenageProducts = new ProductsManager();
@@ -33,7 +33,6 @@ namespace VendingMachine.VendingMachine
         public void SellProduct()
         {
             int choise = System.Convert.ToInt32(Console.ReadLine());
-
             foreach (KeyValuePair<int, Product> machine in this.Machine)
             {
                 if (choise == 0) { break; }

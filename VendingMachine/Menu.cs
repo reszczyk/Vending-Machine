@@ -4,16 +4,14 @@ namespace VendingMachine.VendingMachine
 {
     class Menu
     {
-
         public void Display()
         {
             VendingMachine machine = new VendingMachine();
             machine.FillMachine();
-
             bool loop = true;
+
             while (loop)
             {
-
                 Console.WriteLine
                     ("\n------Menu------" +
                     "\n1. Wyświetl produkty" +
@@ -26,18 +24,18 @@ namespace VendingMachine.VendingMachine
                 string option = Console.ReadLine();
                 switch (option)
                 {
-                    case "1": //Wyświetl produkty
+                    case "1":
                         Console.WriteLine("\nLista produktów:");
                         machine.DisplayProducts();
                         Pause();
                         break;
 
-                    case "2": //Wrzuć monety
+                    case "2":
                         machine.AddCash();
                         Pause();
                         break;
 
-                    case "3": //Kup produkt
+                    case "3":
                         Console.WriteLine("\nWybierz kod produkt:");
                         machine.DisplayProducts();
                         Console.WriteLine("0. Anuluj");
@@ -45,12 +43,12 @@ namespace VendingMachine.VendingMachine
                         Pause();
                         break;
 
-                    case "4": //Zwrot reszty
+                    case "4":
                         machine.ReturnCash();
                         Pause();
                         break;
 
-                    case "0": //Koniec
+                    case "0":
                         Console.Clear();
                         Console.WriteLine("Koniec programu :)");
                         loop = false;
