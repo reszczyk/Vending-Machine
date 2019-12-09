@@ -44,7 +44,6 @@ namespace VendingMachine.VendingMachine
                         if(cash.DecreaseMoney(machine.Value.Price) == true)
                         {
                             Console.WriteLine($"Kupiono {machine.Value.Name}");
-                            cash.DecreaseMoney(machine.Value.Price);
                             this.Machine[choise].ReduceAmount();
                         }
                         else
